@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’ve spent several years doing research, writing code, and thinking about questions of human choice and decision making. Where I’ve studied and worked is in my résumé — this space is for the thinking."
+  },
+  {
+    "objectID": "about.html#why-this-why-now",
+    "href": "about.html#why-this-why-now",
+    "title": "About",
+    "section": "Why this, why now?",
+    "text": "Why this, why now?\nI read a lot of posts and keep catching myself asking the same thing: why should I trust this? What has the writer actually done, and what analysis stands behind the claim? That question is a large part of why I started writing. I’d rather show the work — the method, the data, the reasoning — than hand over a tidy takeaway and ask you to take my word for it.\nI also learn better when I have to explain something to someone other than myself. So this is partly selfish: writing carefully is how I come to understand things properly."
+  },
+  {
+    "objectID": "about.html#what-is-this-about",
+    "href": "about.html#what-is-this-about",
+    "title": "About",
+    "section": "What is this about?",
+    "text": "What is this about?\nA space for the curious — people looking for answers to questions we have all run into that don’t quite scratch the itch, who want the finer details of the methods and the results, not just the headline."
+  },
+  {
+    "objectID": "about.html#what-to-expect",
+    "href": "about.html#what-to-expect",
+    "title": "About",
+    "section": "What to expect",
+    "text": "What to expect\nA post most Fridays, on a topic in economics, econometrics, statistics, machine learning, artificial intelligence, or computer science. Each one is either a description of a method — how to apply it, when to apply it, why it matters now — or an analysis of a real question worked through with data. I try to make them worth reading: rigorous, but not a slog. Everything is free."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Method Section",
+    "section": "",
+    "text": "Every post here is one of two kinds: a method — how a technique works and when to reach for it — or an applied question worked through with data. Two fields, one standard: show the work.\n\nEconomics & econometrics — filter with the Economics chip below.\nComputer science & methods — filter with the Computer Science chip below.\nEvaluating my work? — my résumé (PDF) has the formal background; the posts themselves are the better sample of how I think.\n\nThe category chips below (Economics · Computer Science · Method · Applied) filter the archive along either axis — topic or type of post. They appear as soon as posts are published.\nFollowing along: new posts land on Fridays. Subscribe with any RSS reader via the feed, or plug that feed into a service like Blogtrottr for email — no account with me required."
+  },
+  {
+    "objectID": "index.html#start-here",
+    "href": "index.html#start-here",
+    "title": "The Method Section",
+    "section": "",
+    "text": "Every post here is one of two kinds: a method — how a technique works and when to reach for it — or an applied question worked through with data. Two fields, one standard: show the work.\n\nEconomics & econometrics — filter with the Economics chip below.\nComputer science & methods — filter with the Computer Science chip below.\nEvaluating my work? — my résumé (PDF) has the formal background; the posts themselves are the better sample of how I think.\n\nThe category chips below (Economics · Computer Science · Method · Applied) filter the archive along either axis — topic or type of post. They appear as soon as posts are published.\nFollowing along: new posts land on Fridays. Subscribe with any RSS reader via the feed, or plug that feed into a service like Blogtrottr for email — no account with me required."
+  },
+  {
+    "objectID": "index.html#recent-posts",
+    "href": "index.html#recent-posts",
+    "title": "The Method Section",
+    "section": "Recent posts",
+    "text": "Recent posts\n\n\n    \n      \n      \n    \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "LICENSE-CONTENT.html",
+    "href": "LICENSE-CONTENT.html",
+    "title": "License for written content",
+    "section": "",
+    "text": "The written content of this blog — the prose, essays, analysis, figures, and other non-code material in the posts — is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).\nCopyright (c) 2026 VIKRAM DIXIT KUMARASWAMY.\n\n\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially\n\nunder the following term:\n\nAttribution — You must give appropriate credit, provide a link to this license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the author endorses you or your use.\n\nNo additional restrictions — you may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.\n\n\n\nThis file is a human-readable summary and is not a substitute for the license. The canonical deed and full legal code are here:\n\nDeed: https://creativecommons.org/licenses/by/4.0/\nLegal code: https://creativecommons.org/licenses/by/4.0/legalcode\n\n\n\n\nSource code in this repository (code blocks, theme.scss, configuration, the scaffold) is not covered by this license — it is licensed under MIT. See LICENSE."
+  },
+  {
+    "objectID": "LICENSE-CONTENT.html#what-this-means",
+    "href": "LICENSE-CONTENT.html#what-this-means",
+    "title": "License for written content",
+    "section": "",
+    "text": "You are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially\n\nunder the following term:\n\nAttribution — You must give appropriate credit, provide a link to this license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the author endorses you or your use.\n\nNo additional restrictions — you may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
+  },
+  {
+    "objectID": "LICENSE-CONTENT.html#full-legal-text",
+    "href": "LICENSE-CONTENT.html#full-legal-text",
+    "title": "License for written content",
+    "section": "",
+    "text": "This file is a human-readable summary and is not a substitute for the license. The canonical deed and full legal code are here:\n\nDeed: https://creativecommons.org/licenses/by/4.0/\nLegal code: https://creativecommons.org/licenses/by/4.0/legalcode"
+  },
+  {
+    "objectID": "LICENSE-CONTENT.html#note-on-the-code",
+    "href": "LICENSE-CONTENT.html#note-on-the-code",
+    "title": "License for written content",
+    "section": "",
+    "text": "Source code in this repository (code blocks, theme.scss, configuration, the scaffold) is not covered by this license — it is licensed under MIT. See LICENSE."
+  }
+]
