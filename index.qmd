@@ -1,0 +1,40 @@
+---
+title: "The Method Section"      # <- your blog name. Swap for whatever you choose.
+subtitle: "Methods and applications in economics and computer science: how methods work, when to use them, and real questions worked through with data. New posts on Fridays."
+listing:
+  id: recent-posts       # named so it can be placed under the routing below
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true       # renders the clickable tag/category filter
+  sort-ui: false
+  filter-ui: true        # a search box over the archive
+  feed: true             # generates index.xml (your RSS feed)
+  fields: [date, title, reading-time, description, categories]
+page-layout: full
+title-block-banner: false
+---
+
+## Start here
+
+Every post here is one of two kinds: a **method** --- how a technique works and
+when to reach for it --- or an **applied** question worked through with data.
+Two fields, one standard: show the work.
+
+- **Economics & econometrics** --- filter with the **Economics** chip below.
+- **Computer science & methods** --- filter with the **Computer Science** chip below.
+- **Evaluating my work?** --- my [résumé (PDF)](resume.pdf) has the formal
+  background; the posts themselves are the better sample of how I think.
+
+The **category chips** below (Economics · Computer Science · Method · Applied)
+filter the archive along either axis --- topic or type of post. They appear as
+soon as posts are published.
+
+*Following along:* new posts land on Fridays. Subscribe with any RSS reader via
+the [feed](index.xml), or plug that feed into a service like Blogtrottr for
+email --- no account with me required.
+
+## Recent posts
+
+::: {#recent-posts}
+:::

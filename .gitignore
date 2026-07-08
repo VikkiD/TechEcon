@@ -1,0 +1,15 @@
+# Quarto build artifacts — the published site lives on the gh-pages branch,
+# so none of this needs to be committed to your source branch.
+/.quarto/
+/_site/
+*_files/
+*_cache/
+
+# R / Python cruft
+.Rproj.user/
+.Rhistory
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+**/*.quarto_ipynb

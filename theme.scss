@@ -1,0 +1,70 @@
+/*-- scss:defaults --*/
+
+// Type pairing chosen for a quantitative-but-readable voice:
+//   Spectral      — a literary serif for headings (thinking out loud)
+//   Inter         — a neutral, screen-optimized body face (long reading)
+//   JetBrains Mono — code that stays legible at small sizes
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-family-monospace:  "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+$headings-font-family:   "Spectral", Georgia, "Times New Roman", serif;
+
+// Palette: deliberately NOT the cream-and-terracotta default. A deep petrol
+// teal reads as measured and quantitative; everything else stays quiet paper.
+$body-bg:      #fdfdfc;
+$body-color:   #1f2328;
+$primary:      #0f766e;   // deep teal — the one accent, used with restraint
+$link-color:   #0f766e;
+$border-color: #e6e6e2;
+
+$headings-font-weight: 600;
+$font-size-root: 18px;    // generous body size for reading essays
+
+/*-- scss:rules --*/
+
+// Headings get a touch tighter tracking than the serif's default.
+h1, h2, h3, h4, .navbar-brand {
+  letter-spacing: -0.01em;
+}
+
+// The category badges are the visible face of your tag system — make them
+// small, calm, and clickable rather than loud pills.
+.quarto-category {
+  font-family: $font-family-sans-serif;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  padding: 0.1rem 0.45rem;
+  color: #55605e;
+}
+.quarto-category:hover {
+  border-color: $primary;
+  color: $primary;
+}
+
+// Listing cards: quiet by default, a hairline teal underline on hover so the
+// whole page feels responsive without animation noise.
+.quarto-post .listing-title {
+  font-family: $headings-font-family;
+}
+.quarto-post .listing-title a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.quarto-post .listing-title a:hover {
+  border-bottom-color: $primary;
+}
+
+// Navbar: let it recede so the writing leads.
+.navbar {
+  border-bottom: 1px solid $border-color;
+  font-family: $font-family-sans-serif;
+}
+
+// Give displayed equations a little breathing room.
+.math.display {
+  margin: 1.4rem 0;
+}

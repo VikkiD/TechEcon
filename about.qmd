@@ -1,0 +1,50 @@
+---
+title: "About"
+about:
+  template: trestles
+  image: profile.png          # add a headshot here, or delete this line
+  image-shape: rounded
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: "https://www.linkedin.com/in/vikramdixit"
+    - icon: github
+      text: GitHub
+      href: "https://github.com/VikkiD"
+    - icon: file-earmark-text
+      text: Résumé
+      href: resume.pdf
+    - icon: rss
+      text: Subscribe
+      href: index.xml
+---
+
+I've spent several years doing research, writing code, and thinking about
+questions of human choice and decision making. Where I've studied and worked is
+in my [résumé](resume.pdf) --- this space is for the thinking.
+
+## Why this, why now?
+
+I read a lot of posts and keep catching myself asking the same thing: *why
+should I trust this?* What has the writer actually done, and what analysis stands
+behind the claim? That question is a large part of why I started writing. I'd
+rather show the work --- the method, the data, the reasoning --- than hand over a
+tidy takeaway and ask you to take my word for it.
+
+I also learn better when I have to explain something to someone other than
+myself. So this is partly selfish: writing carefully is how I come to understand
+things properly.
+
+## What is this about?
+
+A space for the curious --- people looking for answers to questions we have all
+run into that don't quite scratch the itch, who want the finer details of the
+methods and the results, not just the headline.
+
+## What to expect
+
+A post most Fridays, on a topic in economics, econometrics, statistics, machine
+learning, artificial intelligence, or computer science. Each one is either a
+description of a method --- how to apply it, when to apply it, why it matters now
+--- or an analysis of a real question worked through with data. I try to make
+them worth reading: rigorous, but not a slog. Everything is free.

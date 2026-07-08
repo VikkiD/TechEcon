@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "*.pdf"        # publishes resume.pdf (drop it at the repo root)
+
+website:
+  title: "The Method Section"
+  description: >-
+    Methods and applications in economics, econometrics, statistics,
+    machine learning, and computer science. New posts on Fridays.
+  # Repo is named "TechEcon", so this is a PROJECT site served from a subpath.
+  # Quarto derives the /TechEcon/ path prefix from this URL so all internal
+  # links resolve. Replace USERNAME with your GitHub username.
+  # (If you later add a custom domain, change this to that domain and drop
+  # the /TechEcon suffix.)
+  site-url: "https://USERNAME.github.io/TechEcon"
+  # Makes LinkedIn / X / Slack show a proper preview card when you paste a link.
+  open-graph: true
+  twitter-card: true
+  navbar:
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: resume.pdf
+        text: "Résumé"
+        target: _blank
+    right:
+      - icon: rss
+        href: index.xml
+        aria-label: RSS feed
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/USERNAME"
+        aria-label: LinkedIn
+      - icon: github
+        href: "https://github.com/USERNAME"
+        aria-label: GitHub
+  page-footer:
+    left: "&copy; 2026 Vikram Dixit K"
+    center: "Prose [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) &middot; Code [MIT](LICENSE)"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      - cosmo        # a clean Bootstrap base...
+      - theme.scss   # ...that theme.scss overrides with our own identity
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    # Math note: Quarto renders LaTeX with MathJax by default (full command
+    # set, no character limits). To trade coverage for speed on formula-heavy
+    # pages, uncomment the next line to use KaTeX instead.
+    # html-math-method: katex

@@ -1,0 +1,10 @@
+# Options here apply to every post in this folder, so you don't repeat them.
+author: "YOUR NAME"
+toc: true
+code-tools: true      # a "</> Code" button to show/hide all source
+code-fold: false
+# freeze caches computed output so a post only re-runs when its .qmd changes.
+# This keeps re-renders fast and your published figures reproducible.
+freeze: auto
+# Renders a license line on every post page for readers (not just the repo).
+license: "CC BY 4.0"
