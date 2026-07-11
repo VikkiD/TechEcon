@@ -1,0 +1,128 @@
+---
+title: "Selection and Insertion Sorts"
+description: "The two simplest sorts --- how they work, and why they still earn their keep."
+date: 2026-07-10
+categories: [Algorithms, Method]
+---
+
+Sorting is one of the most basic approaches to solving problems in human
+thought. Be it prioritizing which tasks to tackle first or who to pay first;
+ranking in competitions, exams, and any other comparative decisions --- we are
+sorting. It is a fundamental problem in computer science too: organizing records
+by date, tabulating results into a sequence of some kind. In this post we look at
+two of the simplest sort algorithms --- selection sort and insertion sort. They
+are instructive, and although less efficient than other algorithms on large,
+randomly ordered data, they remain widely used at small sizes and on streaming
+data. The goal here is to introduce both and, in a companion post, put one to
+work on a real puzzle.
+
+## Selection Sort
+
+The idea: repeatedly *select* the smallest remaining value and place it in the
+next position --- smallest into slot 0, next-smallest into slot 1, and so on
+until every element is placed.
+
+::: {.panel-tabset}
+
+### Pseudocode
+
+```
+SELECTION-SORT(a):
+    n ← length(a)
+    for i ← 0 to n-1:
+        min ← i
+        for j ← i+1 to n-1:
+            if a[j] < a[min]:
+                min ← j
+        swap a[i] and a[min]      # at most n-1 swaps total
+    return a
+```
+
+### Python
+
+```{python}
+def selection_sort(a):
+    n = len(a)
+    for i in range(n):
+        smallest = i
+        for j in range(i + 1, n):
+            if a[j] < a[smallest]:
+                smallest = j
+        a[i], a[smallest] = a[smallest], a[i]   # pythonic swap, no temp needed
+    return a
+
+original = [5, 3, 4, 1, 2, 10, 1]
+print("input: ", original)
+print("sorted:", selection_sort(original.copy()))   # .copy(): it sorts in place
+```
+
+:::
+
+The distinctive property: selection sort makes at most **n − 1 swaps**, the
+fewest of the elementary sorts. That barely matters in RAM, but it matters a lot
+when a *write* is the expensive operation.
+
+## Insertion Sort
+
+The idea is how most people sort a hand of cards. Keep the cards to your left
+sorted; pick up the next one; slide it left past every larger card until it
+lands in the right spot.
+
+::: {.panel-tabset}
+
+### Pseudocode
+
+```
+INSERTION-SORT(a):
+    for i ← 1 to n-1:
+        key ← a[i]
+        j ← i - 1
+        while j ≥ 0 and a[j] > key:   # stops early once the spot is found
+            a[j+1] ← a[j]
+            j ← j - 1
+        a[j+1] ← key
+    return a
+```
+
+### Python
+
+```{python}
+def insertion_sort(a):
+    for i in range(1, len(a)):
+        key = a[i]
+        j = i - 1
+        while j >= 0 and a[j] > key:   # the early stop is what makes it adaptive
+            a[j + 1] = a[j]
+            j -= 1
+        a[j + 1] = key
+    return a
+
+original = [5, 3, 4, 1, 2, 10, 1]
+print("input: ", original)
+print("sorted:", insertion_sort(original.copy()))
+```
+
+:::
+
+<!-- I rewrote your insertion sort into the classic "key + shift" form (instead
+     of the swap-in-a-loop version). Same result, but the `while` loop stops the
+     moment the card is in place --- which is exactly the adaptive behaviour that
+     makes the relevance argument below true. -->
+
+## Where these still earn their keep
+
+<!-- Expand these in your own voice --- each is a real, checkable claim: -->
+
+- **Insertion sort is *online*.** It can absorb elements one at a time as they
+  arrive, keeping the array sorted after each insertion --- so it fits streaming
+  input, where a divide-and-conquer sort would have to wait for the whole batch.
+- **Insertion sort is *adaptive*.** On nearly-sorted input the `while` loop
+  rarely moves, so it approaches O(n). This is why real-world hybrid sorts (like
+  the Timsort behind Python's own `sorted`) fall back to insertion sort on short
+  runs, where its low overhead beats an asymptotically faster algorithm.
+- **Selection sort minimizes writes.** Its n − 1 swaps make it attractive when
+  writing is costly or wearing --- the seed of the companion post's puzzle.
+
+*Next:* an applied post that takes the "fewest exchanges" idea and runs with it
+--- sorting a deck of cards laid face down, where every exchange is the costly
+move.

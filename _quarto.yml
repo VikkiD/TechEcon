@@ -14,7 +14,7 @@ website:
   # links resolve. Replace USERNAME with your GitHub username.
   # (If you later add a custom domain, change this to that domain and drop
   # the /TechEcon suffix.)
-  site-url: "https://USERNAME.github.io/TechEcon"
+  site-url: "https://VikkiD.github.io/TechEcon"
   # Makes LinkedIn / X / Slack show a proper preview card when you paste a link.
   open-graph: true
   twitter-card: true
@@ -33,10 +33,10 @@ website:
         href: index.xml
         aria-label: RSS feed
       - icon: linkedin
-        href: "https://www.linkedin.com/in/USERNAME"
+        href: "https://www.linkedin.com/in/vikramdixit"
         aria-label: LinkedIn
       - icon: github
-        href: "https://github.com/USERNAME"
+        href: "https://github.com/VikkiD"
         aria-label: GitHub
   page-footer:
     left: "&copy; 2026 Vikram Dixit K"
