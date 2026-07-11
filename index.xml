@@ -39,7 +39,7 @@
     return a</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
-<div id="e8bcaa5c" class="cell" data-execution_count="1">
+<div id="26f2e41d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -85,9 +85,7 @@ background-color: null;
 font-style: inherit;">=</span> j</span>
 <span id="cb2-8">        a[i], a[smallest] <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> a[smallest], a[i]   <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># pythonic swap, no temp needed</span></span>
+font-style: inherit;">=</span> a[smallest], a[i]</span>
 <span id="cb2-9">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -119,9 +117,7 @@ font-style: inherit;">"input: "</span>, original)</span>
 background-color: null;
 font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"sorted:"</span>, selection_sort(original.copy()))   <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># .copy(): it sorts in place</span></span></code></pre></div></div>
+font-style: inherit;">"sorted:"</span>, selection_sort(original.copy()))</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>input:  [5, 3, 4, 1, 2, 10, 1]
 sorted: [1, 1, 2, 3, 4, 5, 10]</code></pre>
@@ -140,22 +136,27 @@ sorted: [1, 1, 2, 3, 4, 5, 10]</code></pre>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" aria-labelledby="tabset-2-1-tab">
 <pre><code>INSERTION-SORT(a):
-    for i ← 1 to n-1:
-        key ← a[i]
-        j ← i - 1
-        while j ≥ 0 and a[j] &gt; key:   # stops early once the spot is found
-            a[j+1] ← a[j]
-            j ← j - 1
-        a[j+1] ← key
+    n ← length(a)
+    for i ← 0 to n-1:
+        for j ← i downto 1:
+            if a[j] &lt; a[j-1]:
+                swap a[j] and a[j-1]
+            else:
+                break  # stop early
     return a</code></pre>
 </div>
 <div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
-<div id="b0ee3cae" class="cell" data-execution_count="2">
+<div id="405ef229" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">def</span> insertion_sort(a):</span>
-<span id="cb5-2">    <span class="cf" style="color: #003B4F;
+<span id="cb5-2">    n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(a)</span>
+<span id="cb5-3">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
@@ -163,55 +164,55 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">len</span>(a)):</span>
-<span id="cb5-3">        key <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> a[i]</span>
-<span id="cb5-4">        j <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> i <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span></span>
-<span id="cb5-5">        <span class="cf" style="color: #003B4F;
+font-style: inherit;">range</span>(n):</span>
+<span id="cb5-4">        <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">while</span> j <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&gt;=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span> <span class="kw" style="color: #003B4F;
+font-style: inherit;">for</span> j <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">and</span> a[j] <span class="op" style="color: #5E5E5E;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
-font-style: inherit;">&gt;</span> key:   <span class="co" style="color: #5E5E5E;
+font-style: inherit;">range</span>(i, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;"># the early stop is what makes it adaptive</span></span>
-<span id="cb5-6">            a[j <span class="op" style="color: #5E5E5E;
+font-style: inherit;">0</span>, <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>):</span>
+<span id="cb5-5">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> a[j] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> a[j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]:</span>
+<span id="cb5-6">                a[j], a[j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> a[j]</span>
-<span id="cb5-7">            j <span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span> a[j<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">-=</span> <span class="dv" style="color: #AD0000;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">1</span></span>
-<span id="cb5-8">        a[j <span class="op" style="color: #5E5E5E;
+font-style: inherit;">1</span>], a[j]   <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+font-style: inherit;"># swap into place</span></span>
+<span id="cb5-7">            <span class="cf" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb5-8">                <span class="cf" style="color: #003B4F;
 background-color: null;
-font-style: inherit;">=</span> key</span>
+font-weight: bold;
+font-style: inherit;">break</span>                          <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># stop early</span></span>
 <span id="cb5-9">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -252,17 +253,13 @@ sorted: [1, 1, 2, 3, 4, 5, 10]</code></pre>
 </div>
 </div>
 </div>
-<!-- I rewrote your insertion sort into the classic "key + shift" form (instead
-     of the swap-in-a-loop version). Same result, but the `while` loop stops the
-     moment the card is in place --- which is exactly the adaptive behaviour that
-     makes the relevance argument below true. -->
 </section>
 <section id="where-these-still-earn-their-keep" class="level2">
 <h2 class="anchored" data-anchor-id="where-these-still-earn-their-keep">Where these still earn their keep</h2>
 <!-- Expand these in your own voice --- each is a real, checkable claim: -->
 <ul>
 <li><strong>Insertion sort is <em>online</em>.</strong> It can absorb elements one at a time as they arrive, keeping the array sorted after each insertion — so it fits streaming input, where a divide-and-conquer sort would have to wait for the whole batch.</li>
-<li><strong>Insertion sort is <em>adaptive</em>.</strong> On nearly-sorted input the <code>while</code> loop rarely moves, so it approaches O(n). This is why real-world hybrid sorts (like the Timsort behind Python’s own <code>sorted</code>) fall back to insertion sort on short runs, where its low overhead beats an asymptotically faster algorithm.</li>
+<li><strong>Insertion sort is <em>adaptive</em>.</strong> On nearly-sorted input the inner loop hits the <code>break</code> almost immediately, so it approaches O(n). This is why real-world hybrid sorts (like the Timsort behind Python’s own <code>sorted</code>) fall back to insertion sort on short runs, where its low overhead beats an asymptotically faster algorithm.</li>
 <li><strong>Selection sort minimizes writes.</strong> Its n − 1 swaps make it attractive when writing is costly or wearing — the seed of the companion post’s puzzle.</li>
 </ul>
 <p><em>Next:</em> an applied post that takes the “fewest exchanges” idea and runs with it — sorting a deck of cards laid face down, where every exchange is the costly move.</p>
