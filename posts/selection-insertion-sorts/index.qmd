@@ -48,12 +48,12 @@ def selection_sort(a):
         for j in range(i + 1, n):
             if a[j] < a[smallest]:
                 smallest = j
-        a[i], a[smallest] = a[smallest], a[i]
+        a[i], a[smallest] = a[smallest], a[i]   # pythonic swap, no temp needed
     return a
 
 original = [5, 3, 4, 1, 2, 10, 1]
 print("input: ", original)
-print("sorted:", selection_sort(original.copy()))
+print("sorted:", selection_sort(original.copy()))   # .copy(): it sorts in place
 ```
 
 :::
@@ -80,7 +80,7 @@ INSERTION-SORT(a):
             if a[j] < a[j-1]:
                 swap a[j] and a[j-1]
             else:
-                break  # stop early
+                break             # already in order from here; stop early
     return a
 ```
 
@@ -90,11 +90,11 @@ INSERTION-SORT(a):
 def insertion_sort(a):
     n = len(a)
     for i in range(n):
-        for j in range(i, 0, -1):
+        for j in range(i, 0, -1):             # lazy range: the break actually saves work
             if a[j] < a[j-1]:
-                a[j], a[j-1] = a[j-1], a[j]   # swap into place
+                a[j], a[j-1] = a[j-1], a[j]    # swap into place
             else:
-                break                          # stop early
+                break                          # already in order here; stop early
     return a
 
 original = [5, 3, 4, 1, 2, 10, 1]
@@ -103,6 +103,66 @@ print("sorted:", insertion_sort(original.copy()))
 ```
 
 :::
+
+## How they scale
+
+Claims about running time are cheap; let's measure. The two functions above are
+timed below on three kinds of input --- randomly shuffled, already sorted, and
+reversed --- across growing sizes, taking the best of a few trials at each size.
+
+```{python}
+#| label: fig-runtime
+#| fig-cap: "Running time vs. input size. Both panels share a y-scale, so the gaps are real."
+#| code-fold: true
+#| code-summary: "Show the benchmark code"
+import time, random
+import matplotlib.pyplot as plt
+
+def best_ms(sort, data, trials=3):
+    best = float("inf")
+    for _ in range(trials):
+        d = data.copy()                 # fresh copy: the sorts mutate in place
+        t = time.perf_counter()
+        sort(d)
+        best = min(best, time.perf_counter() - t)
+    return best * 1000
+
+sizes = [100, 200, 400, 800, 1600]
+cases = {
+    "random":   lambda n: random.sample(range(n * 3), n),
+    "sorted":   lambda n: list(range(n)),
+    "reversed": lambda n: list(range(n, 0, -1)),
+}
+random.seed(0)
+
+fig, axes = plt.subplots(1, 2, figsize=(9, 3.6), sharey=True)
+for ax, (name, algo) in zip(axes, [("Selection sort", selection_sort),
+                                   ("Insertion sort", insertion_sort)]):
+    for label, gen in cases.items():
+        ax.plot(sizes, [best_ms(algo, gen(n)) for n in sizes],
+                marker="o", label=label)
+    ax.set_title(name)
+    ax.set_xlabel("input size n")
+    ax.grid(alpha=0.3)
+axes[0].set_ylabel("time (ms)")
+axes[1].legend(title="input order")
+plt.tight_layout()
+plt.show()
+```
+
+Two things jump out. **Selection sort's three curves lie almost on top of one
+another** --- it doesn't care whether the input is sorted, shuffled, or reversed,
+because it always scans the entire unsorted remainder and always makes the same
+n − 1 swaps. Input order is invisible to it.
+
+**Insertion sort fans out completely.** On sorted input it is essentially flat:
+the `break` fires on the first comparison of every pass, the work is linear, and
+at n = 1600 it runs on the order of a hundred times faster than selection sort.
+On random input it is quadratic and slightly *worse* than selection (more data
+movement). On reversed input --- its worst case, where the `break` never fires
+--- it is the slowest line on the whole plot. The same algorithm is both the
+fastest and the slowest curve in the figure, decided entirely by the order of
+its input. That is what *adaptive* means, made visible.
 
 ## Where these still earn their keep
 
